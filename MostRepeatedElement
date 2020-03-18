@@ -1,0 +1,17 @@
+ public int mostRepeatedElement(int [] array){
+        Map<Integer , Integer> map = new HashMap<>();
+        for (int i = 0; i < array.length; i++){
+            int key = array[i];
+            int count = map.containsKey(key) ? map.get(key) : 0;
+            map.put(key , count + 1);
+        }
+        int max = 1, result = -1;
+        for (var value : map.entrySet()){
+            if( value.getValue() > max) {
+                result = value.getKey();
+                max = value.getValue();
+            }
+        }
+        return result;
+    }
+
