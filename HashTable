@@ -22,8 +22,8 @@ public class HashTable {
                return;
            }
        }
-       Entry entry = new Entry(key , value);
-       entries[index].addLast(entry);
+      
+       entries[index].addLast( new Entry(key , value));
     }
 
     public String get(int key){
